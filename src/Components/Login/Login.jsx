@@ -1,9 +1,23 @@
 import { useState } from "react";
+import { getCall } from '../../api'
 
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [badInfo, setBadInfo] = useState(false)
+
+  const checkUser = async() => {
+    const users = await getCall('users')
+    const login = await users.users.find(user => user.id.toString() === username)
+    //if it exists, set state in app
+    if(!login) {
+      setBadInfo(true)
+    } else {
+      console.log(login)
+      setBadInfo(false)
+      //send user to App
+    }
+  }
 
   const handleChange = ({ id, value }) => {
     if(id == "username") {
@@ -16,14 +30,13 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('handleSubmit')
-    if(username || password) {
+    if(username && password === 'password') {
+      console.log('checking user')
       checkUser()
     } else {
+      console.log('bad info')
       setBadInfo(true)
     }
-    //api call to check user info
-      //if it exists, set state in app
-      //if naw, setBadInfo
   }
 
   return (
