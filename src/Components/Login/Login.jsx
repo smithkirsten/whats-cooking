@@ -5,9 +5,15 @@ function Login() {
   const [password, setPassword] = useState('')
 
   return (
-    <>
-      login
-    </>
+    <main>
+      <section>
+        <input id="username" type='text' />
+        <label for="username">username</label>
+
+        <input id="password" type='password' />
+        <label for="password">password</label>
+      </section>
+    </main>
   );
 }
 
