@@ -35,6 +35,8 @@ function Login() {
         <input id="password" type='password' onChange={(e) => handleChange(e.target)}/>
         <label for="password" value={password} >password</label>
         <button onClick={handleSubmit}>login</button>
+        {badInfo && <p>username or password is incorrect</p>}
+        {incomplete && <p>please a valid username and password to login</p>}
       </form>
     </main>
   );
