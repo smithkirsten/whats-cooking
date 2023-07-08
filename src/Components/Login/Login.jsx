@@ -3,11 +3,9 @@ import { useState } from "react";
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [incomplete, setIncomplete] = useState(false)
   const [badInfo, setBadInfo] = useState(false)
 
   const handleChange = ({ id, value }) => {
-    console.log(id, ': ', value)
     if(id == "username") {
       setUsername(value)
     } else {
@@ -15,11 +13,13 @@ function Login() {
     }
   }
 
-  const handleSubmit = () => {
-    if(!username || !password) {
-      setIncomplete(true)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('handleSubmit')
+    if(username || password) {
+      checkUser()
     } else {
-      setIncomplete(false)
+      setBadInfo(true)
     }
     //api call to check user info
       //if it exists, set state in app
@@ -34,9 +34,8 @@ function Login() {
 
         <input id="password" type='password' onChange={(e) => handleChange(e.target)}/>
         <label for="password" value={password} >password</label>
-        <button onClick={handleSubmit}>login</button>
+        <button onClick={(e) => handleSubmit(e)}>login</button>
         {badInfo && <p>username or password is incorrect</p>}
-        {incomplete && <p>please a valid username and password to login</p>}
       </form>
     </main>
   );
