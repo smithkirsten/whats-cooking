@@ -32,12 +32,9 @@ function Login({ setUser}) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('handleSubmit')
     if(username && password === 'password') {
-      console.log('checking user')
       checkUser()
     } else {
-      console.log('bad info')
       setBadInfo(true)
     }
   }
