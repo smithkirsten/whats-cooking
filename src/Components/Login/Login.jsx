@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getCall } from '../../api'
 
-function Login() {
+function Login({ setUser}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [badInfo, setBadInfo] = useState(false)
@@ -15,7 +15,8 @@ function Login() {
     } else {
       console.log(login)
       setBadInfo(false)
-      //send user to App
+      setUser(login)
+      //redirect to dashboard
     }
   }
 
