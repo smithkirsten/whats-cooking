@@ -10,11 +10,13 @@ function App() {
   const [recipes, setRecipes] = useState([])
   const [ingredients, setIngredients] = useState([])
 
+
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Login setUser={setUser} />} />
+        <Route path="/dashboard" element={<Dashboard user={user} setRecipes={setRecipes} recipes={recipes} setIngredients={setIngredients} ingredients={ingredients} />} />
       </Routes>
     </>
   );
