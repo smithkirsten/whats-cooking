@@ -9,3 +9,19 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+button {
+  background: #859992;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-button {
+  border-bottom: solid;
+}
+
