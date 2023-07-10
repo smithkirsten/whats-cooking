@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import { getCall } from '../../api'
 
 function Login({ setUser}) {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [badInfo, setBadInfo] = useState(false)
@@ -16,7 +18,7 @@ function Login({ setUser}) {
       console.log(login)
       setBadInfo(false)
       setUser(login)
-      //redirect to dashboard
+      navigate("/dashboard")
     }
   }
 
