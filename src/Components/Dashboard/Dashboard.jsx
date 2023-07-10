@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Header from '../Header/Header'
 import { getCall } from '../../api'
 
-function Dashboard({ user, recipes, ingredients, setRecipes, setIngredients }) {
+function Dashboard({ user, recipes, ingredients, setUser, setRecipes, setIngredients }) {
   useEffect(() => {
 
    (async () => {
@@ -19,7 +19,7 @@ function Dashboard({ user, recipes, ingredients, setRecipes, setIngredients }) {
 
   return (
     <main>
-      <Header user={user} />
+      <Header user={user} setUser={setUser} />
       {user ? <p>{user.name}</p> : <p>loading...</p>}
       recipes:
       {recipes.length ? recipes.map(r => <p>{r.name}</p>) : <p>loading...</p>}
