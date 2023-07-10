@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { Route, Routes } from "react-router-dom"
 import Login from './Login/Login'
 import Dashboard from './Dashboard/Dashboard'
+import Browse from './Browse/Browse'
+import Pantry from './Pantry/Pantry'
+import Cook from './Cook/Cook'
 
 function App() {
   const [user, setUser] =  useState({})
@@ -16,7 +19,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Login setUser={setUser} />} />
-        <Route path="/dashboard" element={<Dashboard user={user} setRecipes={setRecipes} recipes={recipes} setIngredients={setIngredients} ingredients={ingredients} />} />
+        <Route path="/dashboard" element={<Dashboard setUser={setUser} user={user} setRecipes={setRecipes} recipes={recipes} setIngredients={setIngredients} ingredients={ingredients} />} />
+        <Route path={"/browse"} element={<Browse />} />
+        <Route path={"/cook"} element={<Cook />} />
+        <Route path={"/pantry"} element={<Pantry />} />
       </Routes>
     </>
   );
