@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
+import './Header.css';
 
-function Header({ user }) {
+function Header({ user, loggedIn }) {
 
   return (
     <header>
-      <div className='intro'>
+      <div className='log'>
         <p>welcome, {user.name}</p>
         <button>logout</button>
       </div>
