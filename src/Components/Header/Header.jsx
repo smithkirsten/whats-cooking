@@ -7,7 +7,7 @@ function Header({ user, setUser }) {
 
   const logOut = () => {
     setUser({})
-    navigate('login')
+    navigate('/')
 
   }
 
