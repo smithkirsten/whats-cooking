@@ -8,12 +8,12 @@ function Header({ user, loggedIn }) {
     <header>
       <div className='log'>
         <p>welcome, {user.name}</p>
-        <button>logout</button>
+        <button className='log-button'>logout</button>
       </div>
       <div className='nav'>
-        <button>RECIPES TO COOK</button>
-        <button>GROCERY LIST</button>
-        <button>BROWSE ALL RECIPES</button>
+        <button className='nav-button'>RECIPES TO COOK</button>
+        <button className='nav-button'>GROCERY LIST</button>
+        <button className='nav-button'>BROWSE ALL RECIPES</button>
       </div>
     </header>
   );
