@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login setUser={setUser} />} />
         <Route path="/dashboard" element={<Dashboard setUser={setUser} user={user} setRecipes={setRecipes} recipes={recipes} setIngredients={setIngredients} ingredients={ingredients} />} />
-        <Route path={"/browse"} element={<Browse user={user} recipes={recipes}/>} />
+        <Route path={"/browse"} element={<Browse user={user} recipes={recipes} setUser={setUser}/>} />
         <Route path={"/cook"} element={<Cook />} />
         <Route path={"/pantry"} element={<Pantry />} />
       </Routes>
