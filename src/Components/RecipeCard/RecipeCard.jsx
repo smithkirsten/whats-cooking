@@ -2,12 +2,21 @@ import { useEffect, useState } from "react";
 import Header from '../Header/Header'
 
 
-function RecipeCard({ }) {
+function RecipeCard({ recipe }) {
  
   return (
-    <main>
+    <article className={'recipe-card'}>
+      <img />
 
-    </main>
+      <section className={'recipe-deets'}>
+        <h2>{recipe.name}</h2>
+        {ingredients.length < 11 && <p className={'easy-meal'}>less than 10 ingredients!</p>}
+        <div className={'tags-section'}>
+          {recipe.tags.map(tag => <p className={'tag'}>#{tag}</p>)}
+        </div>
+      </section>
+
+    </article>
   );
 }
 
