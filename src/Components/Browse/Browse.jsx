@@ -9,6 +9,14 @@ function Browse({user, setUser, recipes }) {
   const filterByTag = (tag) => {
     setFilter(tag)
   }
+  const renderFilters = () => {
+    console.log('rendering the filters!')
+    console.log(filter)
+    if(filter !== 'breakfast' && filter !== 'lunch' && filter !== 'dinner' && filter !== '') {
+      //once active class is applied to nav buttons, can simplify this conditional into checking whether any of the buttons are active
+      return filter
+    }
+  }
  
   return (
     <main>
@@ -18,6 +26,7 @@ function Browse({user, setUser, recipes }) {
         <button className={'tag-nav-button'} onClick={() => {filterByTag('lunch')}}>LUNCH</button>
         <button className={'tag-nav-button'} onClick={() => {filterByTag('dinner')}}>DINNER</button>
         <button className={'tag-nav-button'} onClick={() => {filterByTag('')}}>ALL</button>
+        {filter && <button className={'remove-filter'} onClick={() => {filterByTag('')}}>{renderFilters()}</button>}
       </nav>
       <section>
         {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard key={r.id} recipe={r} setFilter={setFilter}/>) : recipes.map(r => <RecipeCard key={r.id} recipe={r} setFilter={setFilter}/>)}
