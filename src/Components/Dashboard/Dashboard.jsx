@@ -19,7 +19,7 @@ function Dashboard({ user, recipes, ingredients, setUser, setRecipes, setIngredi
 
   return (
     <main>
-      <Header user={user} setUser={setUser} />
+      <Header key={'header'} user={user} setUser={setUser} />
       {user ? <p>{user.name}</p> : <p>loading...</p>}
       recipes:
       {recipes.length ? recipes.map(r => <p>{r.name}</p>) : <p>loading...</p>}

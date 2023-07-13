@@ -4,3 +4,14 @@ main {
   color: #292929;
 }
 
+button {
+  background: #859992;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  font-weight: bold;
+}
+
