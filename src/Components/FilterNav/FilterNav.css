@@ -1,13 +1,17 @@
 .tag-nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 10vh;
   border-top: 2px solid black;
   margin: 1em;
 }
 
 .remove-filter {
+  font-size: 11px;
   border: 1px black solid;
   border-radius: 10px;
-  background: rgba(211, 211, 211,0.5)
+  background: rgba(211, 211, 211,0.5);
+  height: 2em;
+  width: 7em;
 }
