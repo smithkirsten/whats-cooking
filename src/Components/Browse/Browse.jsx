@@ -4,8 +4,10 @@ import RecipeCard from "../RecipeCard/RecipeCard";
 
 
 function Browse({user, setUser, recipes }) {
+  const [filter, setFilter] = useState('')
 
   const filterByTag = (tag) => {
+    setFilter(tag)
 
   }
  
@@ -19,7 +21,7 @@ function Browse({user, setUser, recipes }) {
         <button className={'tag-nav-button'} onClick={() => {filterByTag('dessert')}}>DESSERT</button>
       </nav>
       <section>
-        {recipes.map(r => <RecipeCard recipe={r}/>)}
+        {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard recipe={r}/>) : recipes.map(r => <RecipeCard recipe={r}/>)}
       </section>
     </main>
   );
