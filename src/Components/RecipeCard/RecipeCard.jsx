@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from '../Header/Header'
 
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ recipe, setFilter }) {
  
   return (
     <article className={'recipe-card'}>
