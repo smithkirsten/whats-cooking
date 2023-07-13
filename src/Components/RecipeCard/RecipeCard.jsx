@@ -6,7 +6,7 @@ function RecipeCard({ recipe, setFilter }) {
  
   return (
     <article className={'recipe-card'}>
-      <img />
+      <img src={recipe.image} alt={recipe.name} className={'recipe-image'}/>
 
       <section className={'recipe-deets'}>
         <h2>{recipe.name}</h2>
