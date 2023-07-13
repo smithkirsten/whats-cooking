@@ -12,7 +12,7 @@ function RecipeCard({ recipe, setFilter }) {
         <h2>{recipe.name}</h2>
         {recipe.ingredients.length < 11 && <p className={'easy-meal'}>less than 10 ingredients!</p>}
         <div className={'tags-section'}>
-          {recipe.tags.map(tag => <p className={'tag'}>#{tag}</p>)}
+          {recipe.tags.map(tag => <button className={'tag'} onClick={() => {setFilter(tag)}}>#{tag}</button>)}
         </div>
       </section>
 
