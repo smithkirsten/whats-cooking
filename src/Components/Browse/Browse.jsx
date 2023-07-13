@@ -8,7 +8,6 @@ function Browse({user, setUser, recipes }) {
 
   const filterByTag = (tag) => {
     setFilter(tag)
-
   }
  
   return (
@@ -18,7 +17,7 @@ function Browse({user, setUser, recipes }) {
         <button className={'tag-nav-button'} onClick={() => {filterByTag('breakfast')}}>BREAKFAST</button>
         <button className={'tag-nav-button'} onClick={() => {filterByTag('lunch')}}>LUNCH</button>
         <button className={'tag-nav-button'} onClick={() => {filterByTag('dinner')}}>DINNER</button>
-        <button className={'tag-nav-button'} onClick={() => {filterByTag('dessert')}}>DESSERT</button>
+        <button className={'tag-nav-button'} onClick={() => {filterByTag('')}}>ALL</button>
       </nav>
       <section>
         {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard key={r.id} recipe={r}/>) : recipes.map(r => <RecipeCard key={r.id} recipe={r}/>)}
