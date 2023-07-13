@@ -21,7 +21,7 @@ function Browse({user, setUser, recipes }) {
         <button className={'tag-nav-button'} onClick={() => {filterByTag('dessert')}}>DESSERT</button>
       </nav>
       <section>
-        {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard recipe={r}/>) : recipes.map(r => <RecipeCard recipe={r}/>)}
+        {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard key={r.id} recipe={r}/>) : recipes.map(r => <RecipeCard key={r.id} recipe={r}/>)}
       </section>
     </main>
   );
