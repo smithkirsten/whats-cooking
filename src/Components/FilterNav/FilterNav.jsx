@@ -1,8 +1,23 @@
+import { useState } from 'react'
 import './FilterNav.css'
 
-function FilterNav({ filterByTag, renderFilters }) {
+function FilterNav({ filterByTag, filter }) {
+  const [breakfast, setBreakfast] = useState('')
+  const [lunch, setLunch] = useState('')
+  const [dinner, setDinner] = useState('')
+  const [all, setAll] = useState('')
+  
+  const highlight = () => {
+    
+  }
+  const renderFilters = () => {
+    if(filter !== 'breakfast' && filter !== 'lunch' && filter !== 'dinner' && filter !== '') {
+      //once active class is applied to nav buttons, can simplify this conditional into checking whether any of the buttons are active
+      return filter
+    }
+  }
 
-  render (
+  return (
     <nav className={'tag-nav'}>
     <button 
       className={'tag-nav-button'} 
