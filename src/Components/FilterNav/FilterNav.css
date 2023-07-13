@@ -1,5 +1,9 @@
 .tag-nav {
-  
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  border-top: 2px solid black;
+  margin: 1em;
 }
 
 .remove-filter {
