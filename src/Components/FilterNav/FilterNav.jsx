@@ -13,7 +13,7 @@ function FilterNav({ filterByTag, filter }) {
   const renderFilters = () => {
     if(filter !== 'breakfast' && filter !== 'lunch' && filter !== 'dinner' && filter !== '') {
       //once active class is applied to nav buttons, can simplify this conditional into checking whether any of the buttons are active
-      return filter
+      return <button className={'remove-filter'} onClick={() => {filterByTag('')}}>{filter}</button>
     }
   }
 
@@ -39,7 +39,7 @@ function FilterNav({ filterByTag, filter }) {
       onClick={() => {filterByTag('')}}
       style={{ color: filter === '' ? 'white' : '#292929' }}
     >ALL</button>
-    {filter && <button className={'remove-filter'} onClick={() => {filterByTag('')}}>{renderFilters()}</button>}
+    {filter && renderFilters()}
   </nav>
   )
 }
