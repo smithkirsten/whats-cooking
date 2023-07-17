@@ -1,7 +1,7 @@
 .recipe-card {
   display: flex;
-  width: 86vmin;
-  height: 25vmax;
+  width: 94%;
+  height: 30vh;
   background: white;
   margin: 2em;
 }
@@ -20,5 +20,44 @@
 }
 
 .recipe-deets {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
+}
+
+.recipe-name {
+  font-size: 14px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #152A23;
+  background-color: white;
+}
+
+.add-button {
+  width: 20vmax;
+  height: 10vmin;
+  font-size: 16px;
+  background-color: #152A23;
+  color: white;
+}
+
+@media (min-width: 575px) {
+
+  .recipe-card {
+    width: 80%;
+    height: 25%;
+    padding: 10px;
+  }
+  .recipe-name {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 18px;
+  }
 }

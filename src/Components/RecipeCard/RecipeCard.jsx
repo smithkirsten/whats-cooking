@@ -9,12 +9,12 @@ function RecipeCard({ recipe, setFilter }) {
         <img src={recipe.image} alt={recipe.name} className={'recipe-image'}/>
       </div>
       <section className={'recipe-deets'}>
-        <h2>{recipe.name}</h2>
+        <h2 className={'recipe-name'}>{recipe.name}</h2>
         {recipe.ingredients.length < 11 && <p className={'easy-meal'}>less than 10 ingredients!</p>}
         <div className={'tags-section'}>
           {recipe.tags.map(tag => <button className={'tag'} onClick={() => {setFilter(tag)}}>#{tag}</button>)}
         </div>
-        <button>Add to my Cookbook</button>
+        <button className={'add-button'}>Add to my Cookbook</button>
       </section>
     </article>
   );
