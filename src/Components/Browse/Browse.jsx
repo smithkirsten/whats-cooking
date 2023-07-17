@@ -17,7 +17,7 @@ function Browse({user, setUser, recipes }) {
     <main>
       <Header user={user} setUser={setUser} />
       <FilterNav filterByTag={filterByTag} filter={filter}/>
-      <section>
+      <section className={'cards-section'}>
         {filter ? recipes.filter(r => r.tags.includes(filter)).map(r => <RecipeCard key={r.id} recipe={r} setFilter={setFilter}/>) : recipes.map(r => <RecipeCard key={r.id} recipe={r} setFilter={setFilter}/>)}
       </section>
     </main>
