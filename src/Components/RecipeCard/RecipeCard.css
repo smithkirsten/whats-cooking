@@ -1,0 +1,24 @@
+.recipe-card {
+  display: flex;
+  width: 86vmin;
+  height: 25vmax;
+  background: white;
+  margin: 2em;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.recipe-image {
+  height: 20vmax;
+  width: auto;
+
+}
+
+.recipe-deets {
+
+}
